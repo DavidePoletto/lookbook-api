@@ -96,10 +96,10 @@ POST /api/swaporders
 Content-Type: application/json
 
 {
-  "user1": "64a76d9e8c07b32a58e5f129",
-  "user2": "64a76e1b8c07b32a58e5f130",
-  "product1": "64a77a5c8c07b32a58e5f131",
-  "product2": "64a77a7a8c07b32a58e5f132"
+  - "user1": "64a76d9e8c07b32a58e5f129",
+  - "user2": "64a76e1b8c07b32a58e5f130",
+  - "product1": "64a77a5c8c07b32a58e5f131",
+  - "product2": "64a77a7a8c07b32a58e5f132"
 }
 
 ### Filter Swap Orders by Date
@@ -114,8 +114,8 @@ GET /api/swaporders?startDate=2024-01-01&endDate=2024-12-31
 - controllers/: Contains the logic for managing the APIs (if applicable).
 
 ### Security
-SQL Injection: MySQL queries are protected using prepared statements.
-NoSQL Injection: MongoDB queries are handled using Mongoose, which provides protection against NoSQL Injection attacks.
+- SQL Injection: MySQL queries are protected using prepared statements.
+- NoSQL Injection: MongoDB queries are handled using Mongoose, which provides protection against NoSQL Injection attacks.
 
 ### Contributions
 
