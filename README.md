@@ -37,14 +37,14 @@ LookBook is an application for selling and swapping second-hand clothing. This R
     npm install
 
 3. Create a .env file in the project root and configure the environment variables:
-    # .env
-    DB_HOST=localhost
-    DB_USER=root
-    DB_PASSWORD=simplepass
-    DB_NAME=lookbook
+    ## .env
+    - DB_HOST=localhost
+    - DB_USER=root
+    - DB_PASSWORD=simplepass
+    - DB_NAME=lookbook
 
-    MONGO_URI=mongodb://localhost:27017/lookbook
-    PORT=3000
+    - MONGO_URI=mongodb://localhost:27017/lookbook
+    - PORT=3000
 
 4. Run the MySQL migrations to create the tables:
 
