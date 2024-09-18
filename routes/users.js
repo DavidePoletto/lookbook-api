@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/user');
 
-// Creazione di un nuovo utente
+// Creazione utente
 router.post('/', async (req, res) => {
   try {
     const user = new User(req.body);
@@ -13,7 +13,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// Ottenere tutti gli utenti
+// Ottenere utenti
 router.get('/', async (req, res) => {
   try {
     const users = await User.find();
@@ -23,7 +23,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Modifica di un utente
+// Modifica utente
 router.put('/:id', async (req, res) => {
   try {
     const user = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });
@@ -33,7 +33,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-// Cancellazione di un utente
+// Cancellazione utente
 router.delete('/:id', async (req, res) => {
   try {
     await User.findByIdAndDelete(req.params.id);

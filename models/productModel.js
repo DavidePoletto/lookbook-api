@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const productSchema = new mongoose.Schema({
   name: { type: String, required: true },
-  photos: { type: [String], required: true } // Array di URL delle foto
+  photos: { type: [String], required: true }
 });
 
 module.exports = mongoose.model('Product', productSchema);

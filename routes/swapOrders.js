@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const SwapOrder = require('../models/swapOrderModel');
 
-// Creazione di un nuovo ordine swap
+// Creazione swap
 router.post('/', async (req, res) => {
   try {
     const swapOrder = new SwapOrder(req.body);
@@ -13,20 +13,20 @@ router.post('/', async (req, res) => {
   }
 });
 
-// Ottenere tutti gli ordini swap
+// Ottenere swap
 router.get('/', async (req, res) => {
   try {
     const { startDate, endDate, product } = req.query;
     const query = {};
 
-    // Filtro per data
+    // Filtro data
     if (startDate || endDate) {
       query.createdAt = {};
       if (startDate) query.createdAt.$gte = new Date(startDate);
       if (endDate) query.createdAt.$lte = new Date(endDate);
     }
 
-    // Filtro per prodotto
+    // Filtro prodotto
     if (product) {
       query.$or = [{ product1: product }, { product2: product }];
     }
@@ -38,7 +38,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Modifica di un ordine swap
+// Modifica swap
 router.put('/:id', async (req, res) => {
   try {
     const swapOrder = await SwapOrder.findByIdAndUpdate(req.params.id, req.body, { new: true });
@@ -48,7 +48,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-// Cancellazione di un ordine swap
+// Cancellazione swap
 router.delete('/:id', async (req, res) => {
   try {
     await SwapOrder.findByIdAndDelete(req.params.id);
